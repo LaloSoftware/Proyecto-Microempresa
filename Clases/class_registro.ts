@@ -1,11 +1,13 @@
+
+
 class Registro {
   constructor() {
 
   }
 
-  public var articulos;
-  public var cliente = "Venta al publico";
-  public var fecha_y_hora;
+  articulos : Articulo;
+  cliente : string = "Venta al publico";
+  fecha_y_hora : Date;
 
   public RegistrarIngresoMercancia(articulos){
 
