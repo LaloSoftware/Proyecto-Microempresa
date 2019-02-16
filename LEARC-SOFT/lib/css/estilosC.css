@@ -1,0 +1,13 @@
+.entrada{
+  background-image: url("../../Logos/background2.png");
+}
+.botones{
+  float: right;
+}
+.background{
+  background-image: url("../../Logos/Group8.png");
+  /* background-position: center;
+  background-position: left;
+  background-repeat: no-repeat; */
+  /* align-content: center; */
+}
