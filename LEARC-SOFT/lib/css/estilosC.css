@@ -3,11 +3,65 @@
 }
 .botones{
   float: right;
+  padding-left: 40
 }
 .background{
-  background-image: url("../../Logos/Group8.png");
+  /* background-image: url("../../Logos/Group8.png"); */
   /* background-position: center;
   background-position: left;
   background-repeat: no-repeat; */
   /* align-content: center; */
+}
+.pie-pagina{
+  text-align: center;
+  background-image: url("../../Logos/footer.png");
+}
+
+.contenido-trabajo {
+  display: none;
+  display: block;
+  /* background-color: lightblue; */
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-image: url("../../Logos/Group8.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  color: black;
+  text-align: center;
+}
+.login{
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #EEEAEA;
+  width:400px;
+  height: 500px;
+  border-radius: 25px;
+}
+.fondo{
+  background-image: url("../../Logos/fondoLogin.png");
+  -webkit-background-size: cover;
+}
+
+.input{
+  border-radius: 10px;
+  align-self: center;
+
+}
+.text{
+  padding-top: 10px;
+  font-size: 30px;
+}
+.label{
+  padding-top: 10px;
+  font-size: 25px;
+}
+.btn2-0{
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+.btn_ingresar{
+  background-image: url("../../Logos/btn.png");
 }
