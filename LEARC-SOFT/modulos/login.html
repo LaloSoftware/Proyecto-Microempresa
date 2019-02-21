@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title>Login</title>
+    <script type="text/javascript" src="../lib/jquery/jquery-3.3.1.js"></script>
+	  <script type="text/javascript" src="../lib/popper/popper.js"></script>
+	  <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.js"></script>
+
+	  <script type="text/javascript" src="http://localhost:35729/livereload.js"></script>
+		<link rel="stylesheet" type="text/css" href="../lib/css/estilosC.css">
+    <link rel="stylesheet" type="text/css" href="../lib/css/bootstrap.css">
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#btn_ingresar').on("click",function(){
+            if("#txt_usuario" == ""){
+              ("#div_mensaje").append("Algun campo esta vacio.");
+            }
+        });
+      });
+    </script>
+  </head>
+  <body class="fondo">
+    <!-- <style>
+    body{
+      background: url(../Logos/fondoLogin.png);
+      -webkit-background-size: cover;
+    }
+
+    </style> -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <div class="login">
+            <div align="center">
+              <br>
+              <label class="text">Login</label>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+
+            <div id="usuario" align="center">
+              <img class="img" src="../Logos/user.png" width="30px"height="30px" />&nbsp; <label>Usuario:  &nbsp;&nbsp;&nbsp;&nbsp; </label> <input required class="input" id="txt_usuario" type="text"/>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+            <div id="password" align="center">
+              &nbsp;&nbsp;&nbsp;<img class="img" src="../Logos/candado.png" width="30px"height="30px"/>&nbsp; <label>Contrase&ntilde;a: </label><input class="input" id="txt_contraseña" type="password"/>
+              <br>
+              <br>
+              <br>
+            </div>
+            <div id="div_mensaje" align="center">
+
+            </div>
+            <div id="boton" class="btn2-0">
+              <br>
+              <br>
+              <!-- <button class="btn_ingresar">Ingresar</button> -->
+              <a id="btn_ingresar" href="#"><img src="../Logos/btn_ingresar.png" width="90" height="50"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
