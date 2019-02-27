@@ -65,3 +65,19 @@
 .btn_ingresar{
   background-image: url("../../Logos/btn.png");
 }
+.fondo-Registro{
+ background-image: url("../../Logos/fondoRegistro.png");
+ -webkit-background-size: cover;
+}
+.sign{
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #EEEAEA;
+  width:400px;
+  height: 600px;
+  border-radius: 25px;
+  float: right;
+}
+.label2{
+  float: left;
+}
