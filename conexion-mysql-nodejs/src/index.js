@@ -1,6 +1,6 @@
 const app = require('./config/server');
 
-require('./app/routes/news')(app);
+require('./app/routes/punto_venta')(app);
 
 // initializing server
 app.listen(app.get('port'), () => {

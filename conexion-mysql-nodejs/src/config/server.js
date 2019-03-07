@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // settings
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3100);
 /* Si el servidor de la nube o el sistema operativo nos da un puerto,
 pues a usarlo, todo lo contrario usar el puerto 3000
 */
