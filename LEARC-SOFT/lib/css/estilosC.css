@@ -39,6 +39,15 @@
   height: 500px;
   border-radius: 25px;
 }
+.sign{
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #EEEAEA;
+  width: 400px;
+  height: 600px;
+  border-radius: 25px;
+  float: right;
+}
 .fondo{
   background-image: url("../../Logos/fondoLogin.png");
   -webkit-background-size: cover;
@@ -69,15 +78,7 @@
   background-image: url("../../Logos/fondoRegistro.png");
   -webkit-background-size: cover;
 }
-.sign{
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #EEEAEA;
-  width: 400px;
-  height: 600px;
-  border-radius: 25px;
-  float: right;
-}
+
 .label{
   float:left;
 }
