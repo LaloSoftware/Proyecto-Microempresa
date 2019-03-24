@@ -1,0 +1,9 @@
+<nav class="navbar sticky-top navbar-dark bg-secondary animated fadeIn fast">
+  <a class="navbar-brand" [routerLink]="['/punto_de_venta']">Ventas</a>
+  <a class="navbar-brand" [routerLink]="['/productos']">Productos</a>
+  <div class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Buscar productos" aria-label="Search" (keyup.enter)="buscar(productoBuscado.value)" #productoBuscado>
+    <button class="btn btn-info my-2 my-sm-0" (click)="buscar(productoBuscado.value)" type="button">Buscar</button>
+  </div>
+</nav>
+<hr>

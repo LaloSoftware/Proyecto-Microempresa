@@ -1,0 +1,113 @@
+<app-nv-ventas></app-nv-ventas>
+
+<div class="row animated fadeIn">
+  <div class="d-md-12 col-md-6 px-1">
+    <input class="btn-block" type="text" name="codigoBarras" id="codigoBarras" placeholder="C&oacute;digo de barras" #artVender>
+  </div>
+  <div class="d-md-12 col-md-3 px-1">
+    <select class="form-control btn-block" id="sel1" #cantidad>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+    </select>
+  </div>
+</div>
+<div class="row botones animated fadeIn">
+  <div class="col d-12 d-md-12 col-md-3">
+    <!--(click)="agregarProducto(nuevoProducto, nuevaCantidad)"-->
+    <button class="btn btn-outline-success btn-block" (click)="AgregarProducto(artVender.value, cantidad.value)">Agregar</button>
+  </div>
+
+  <div class="col  d-12 d-md-12 col-md-3">
+    <button class="btn btn-outline-info btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Agregar por nombre
+    </button>
+  </div>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <form>
+        <div class="row container animated fadeIn">
+          <div class="d-md-12 col-md-8 px-1">
+            <input class="btn-block" type="text" name="nombreProducto" id="nombreProducto" placeholder="Nombre del producto">
+          </div>
+          <div class="d-md-12 col-md-4 px-1">
+            <select class="form-control" id="sel1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+            <!--<input class="btn-block" type="text" name="cantidad" id="cantidad" placeholder="Cantidad">-->
+          </div>
+        </div>
+      </form>
+      <div class="row container animated fadeIn">
+        <div class="col d-md-12 col-md-12">
+          <button class="btn btn-outline-success btn-block my-1">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<hr>
+<div class="row container btn-outline-secondary animated fadeIn">
+  <div class="col col-md-3">
+    Producto
+  </div>
+  <div class="col col-md-3">
+    Cantidad
+  </div>
+  <div class="col col-md-3">
+    Precio
+  </div>
+  <div class="col col-md-3">
+    Subtotal
+  </div>
+</div>
+<hr>
+<div class="row container" *ngIf="ventaActual == undefined">
+  <div class="col">
+    <p class="text-black-50 text-center">Ingrese articulos para vender.</p>
+  </div>
+  <hr>
+</div>
+<!-- Comparacion para ver si el arreglo es indefinido al checar si existen datos -->
+<div *ngIf="ventaActual.length > 0 ">
+  <div *ngFor="let producto of ventaActual; let i = index">
+    <div class="row container">
+      <div class="col col-md-3">
+        {{ producto.pVenta["descripcion"] }}
+      </div>
+      <div class="col col-md-3">
+        {{ producto.cantidad }}
+      </div>
+      <div class="col col-md-3">
+        {{ producto.pVenta["precio_menudeo"] }}
+      </div>
+      <div class="col col-md-3">
+        {{ producto.pVenta["precio_menudeo"] * cantidad }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="botones animated fadeIn">
+  <div class="col d-md-12 col-md-4">
+    <button class="btn btn-outline-success btn-block"> Vender </button>
+  </div>
+</div>
+<hr class="mb-3">
+

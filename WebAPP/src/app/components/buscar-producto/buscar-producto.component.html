@@ -1,0 +1,30 @@
+<app-nv-ventas></app-nv-ventas>
+
+<div class="alert alert-danger" role="alert" *ngIf="productosEncontrados.length == 0">
+  <strong>Oh no!</strong> No se encontraron resultados para {{ busqueda }}.
+</div>
+  
+<div *ngIf="productosEncontrados.length > 0">
+    <table class="table table-hover animated fadeIn fast">
+        <thead>
+          <tr>
+            <th scope="col">C&oacute;digo</th>
+            <th scope="col">Descripci&oacute;n</th>
+            <th scope="col">Precio mayoreo</th>
+            <th scope="col">Precio menudeo</th>
+            <th scope="col">Cantidad (unidad)</th>
+            <th scope="col">Cantidad (piezas)</th>
+          </tr>
+        </thead>
+        <tbody class="animated fadeIn">
+          <tr *ngFor="let producto of productosEncontrados" (click)="verProducto(producto.id_producto)">
+            <th scope="row"> {{ producto.id_producto }} </th>
+            <td> {{ producto.descripcion }} </td>
+            <td> {{ producto.precio_mayoreo }} </td>
+            <td> {{ producto.precio_menudeo }} </td>
+            <td> {{ producto.cantidad_unidades_inventario }} </td>
+            <td> {{ producto.cantidad_piezas_inventario }} </td>
+          </tr>
+        </tbody>
+      </table>
+</div>

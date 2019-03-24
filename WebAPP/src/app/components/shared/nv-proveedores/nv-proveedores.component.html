@@ -1,0 +1,11 @@
+<nav class="navbar sticky-top navbar-dark bg-secondary animated fadeIn fast">
+  <a class="navbar-brand" [routerLink]="['/proveedores']">Proveedores</a>
+  <a class="navbar-brand" [routerLink]="['/generar_cotizacion']">Cotizaciones</a>
+  <a class="navbar-brand" [routerLink]="['pedidos']">Pedidos</a>
+  <form class="form-inline my-2 my-lg-0">
+      <!--(keyup.enter)=""-->
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar proveedores" aria-label="Search"  #heroeBuscado>
+      <button class="btn btn-info my-2 my-sm-0">Buscar</button>
+    </form>
+</nav>
+<hr>
