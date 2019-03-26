@@ -18,8 +18,6 @@ import { ProveedoresComponent } from './components/proveedores/proveedores.compo
 import { GenerarCotizacionComponent } from './components/generar-cotizacion/generar-cotizacion.component';
 import { GenerarPedidoComponent } from './components/generar-pedido/generar-pedido.component';
 import { ProductosComponent } from './components/productos/productos.component';
-import { NvVentasComponent } from './components/shared/nv-ventas/nv-ventas.component';
-import { NvProveedoresComponent } from './components/shared/nv-proveedores/nv-proveedores.component';
 import { BuscarProductoComponent } from './components/buscar-producto/buscar-producto.component';
 
 
@@ -34,8 +32,6 @@ import { BuscarProductoComponent } from './components/buscar-producto/buscar-pro
     GenerarCotizacionComponent,
     GenerarPedidoComponent,
     ProductosComponent,
-    NvVentasComponent,
-    NvProveedoresComponent,
     BuscarProductoComponent
   ],
   imports: [

@@ -1,22 +1,37 @@
-<div class="nav flex-column nav-pills p-1 border border-primary border-left-0 animated fadeIn fast" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-  <div >
-    <a [routerLink]="['punto_de_venta']" class="nav-item btn-outline-info btn-block" routerLinkActive="active" id="v-pills-home-tab" data-toggle="pill" role="tab">
-      Ventas
-    </a>
-    <!--<button class="btn-outline-info btn-block">Ventas</button>
-  </div>-->
-  <div>
-    <a [routerLink]="['proveedores']" class="nav-item btn-outline-info btn-block" routerLinkActive="active" id="v-pills-profile-tab" data-toggle="pill" role="tab">
-      Proveedores
-    </a>
-    <!--<button class="btn-outline-info btn-block">Proveedores</button>
-  </div>-->
-  <div>
-    <a [routerLink]="['Administracion']" class="nav-item btn-outline-info btn-block" routerLinkActive="active" id="v-pills-messages-tab" data-toggle="pill" role="tab">
-      Administraci&oacute;n
-    </a>
-    <!--<button class="btn-outline-info btn-block">Administraci&oacute;n</button>
-  </div>-->
-</div>
-  
-
+<nav class="navbar sticky-top navbar-dark bg-secondary animated fadeIn fast">
+    <!---->
+    <div class="btn-group">
+        <button type="button" class="btn btn-secondary">
+          <p *ngIf="seccion == undefined">seccion</p>
+          <p *ngIf="seccion == 'Ventas'">Ventas</p>
+          <p *ngIf="seccion == 'Proveedores'">Proveedores</p>
+          <p *ngIf="seccion == 'Administracion'">Administraci&oacute;n</p>
+        </button>
+        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" [routerLink]="['punto_de_venta']" (click)="establecer('Ventas')">Ventas</a>
+          <a class="dropdown-item" [routerLink]="['proveedores']" (click)="establecer('Proveedores')">Proveedores</a>
+          <a class="dropdown-item" [routerLink]="['Administracion']" (click)="establecer('Administracion')">Administraci&oacute;n</a>
+        </div>
+      </div>
+    <!---->
+    <a class="navbar-brand" [routerLink]="['/punto_de_venta']" *ngIf="seccion == 'Ventas' || seccion == undefined">Ventas</a>
+    <a class="navbar-brand" [routerLink]="['/productos']" *ngIf="seccion == 'Ventas' || seccion == undefined">Productos</a>
+    <div class="form-inline my-2 my-lg-0" *ngIf="seccion == 'Ventas' || seccion == undefined">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar productos" aria-label="Search" (keyup.enter)="buscar(productoBuscado.value)" #productoBuscado>
+      <button class="btn btn-info my-2 my-sm-0" (click)="buscar(productoBuscado.value)" type="button">Buscar</button>
+    </div>
+      
+    <!---->
+    <a class="navbar-brand" [routerLink]="['/proveedores']" *ngIf="seccion == 'Proveedores'">Proveedores</a>
+    <a class="navbar-brand" [routerLink]="['/generar_cotizacion']" *ngIf="seccion == 'Proveedores'">Cotizaciones</a>
+    <a class="navbar-brand" [routerLink]="['pedidos']" *ngIf="seccion == 'Proveedores'">Pedidos</a>
+    <form class="form-inline my-2 my-lg-0" *ngIf="seccion == 'Proveedores'">
+        <!--(keyup.enter)=""-->
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar proveedores" aria-label="Search"  #heroeBuscado>
+        <button class="btn btn-info my-2 my-sm-0">Buscar</button>
+      </form>
+  </nav>
+  <hr>

@@ -5,10 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent implements OnInit {
-
+  public seccion: string
   constructor() { }
 
   ngOnInit() {
   }
 
+  public establecer(seccion: string){
+    this.seccion = seccion;
+  }
 }

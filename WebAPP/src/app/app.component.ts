@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'webappMIN';
+  title = 'MIN';
+  seccion: string = "Ventas";
+  constructor(){
+    this.establecerSeccion("Ventas");
+  }
+  public establecerSeccion(seccion:string){
+    this.seccion = seccion;
+  }
 }
