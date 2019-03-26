@@ -15,22 +15,27 @@
 .pie-pagina{
   text-align: center;
   background-image: url("../../Logos/footer.png");
+  text-decoration-color: #ECF7FB;
+  color: #ECF7FB;
+}
+.pp{
+  color: #ECF7FB;
 }
 
-.contenido-trabajo {
+/* .contenido-trabajo {
   display: none;
   display: block;
-  /* background-color: lightblue; */
+  /* background-color: lightblue;
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-image: url("../../Logos/Group8.png");
+  background-image: url("../../Logos/folleto2.png");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;
   color: black;
   text-align: center;
-}
+} */
 .login{
   margin: 0 auto;
   padding: 20px;
@@ -81,4 +86,14 @@
 
 .label{
   float:left;
+}
+.fondoFolleto{
+  background-image: url("../../Logos/folleto.png");
+  -webkit-background-size: cover;
+}
+.prueba{
+  background-image: url("../../Logos/LEARC-SOFT.png");
+  background-size: contain;
+  height: 720px;
+  background-repeat: no-repeat;
 }
