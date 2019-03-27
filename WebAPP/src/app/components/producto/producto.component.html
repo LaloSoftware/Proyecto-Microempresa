@@ -27,7 +27,7 @@
     <tbody>
       <tr>
         <th scope="row" class="table-success" colspan="2">Precio sin impuestos</th>
-      </tr>    
+      </tr>
         <tr>
         <td class="alert-info">Precio (unitario)</td>
         <td class="alert-info">Precio (pieza)</td>
@@ -122,15 +122,15 @@
 
 <div class="row">
   <div class="col d-md-12 col-md-2" *ngIf="estado == 'vista'">
-    <button class="btn btn-outline-warning btn-block" (click)="cambiarEstado()">Editar</button>
+    <button class="btn btn-warning btn-block" (click)="cambiarEstado()">Editar</button>
   </div>
   <div class="col d-md-12 col-md-2" *ngIf="estado == 'vista'">
-    <button class="btn btn-outline-danger btn-block">Eliminar</button>
+    <button class="btn btn-danger btn-block">Eliminar</button>
   </div>
   <div class="col d-md-12 col-md-2" *ngIf="estado == 'edicion'">
-    <button class="btn btn-outline-warning btn-block" (click)="cambiarEstado()">Cancelar</button>
+    <button class="btn btn-warning btn-block" (click)="cambiarEstado()">Cancelar</button>
   </div>
   <div class="col d-md-12 col-md-2" *ngIf="estado == 'edicion'">
-    <button class="btn btn-outline-info btn-block">Guardar</button>
+    <button class="btn btn-info btn-block">Guardar</button>
   </div>
 </div>
