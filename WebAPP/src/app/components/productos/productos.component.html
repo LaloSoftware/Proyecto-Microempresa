@@ -1,0 +1,28 @@
+<div class="row container animated fadeIn fast">
+  <div class="col-12 mb-3">
+    <a [routerLink]="['/productos', 'nuevo']" > <svg height="24" width="24" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus-circle" class="svg-inline--fa fa-plus-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"></path></svg> </a>
+  </div>
+</div>
+
+<table class="table table-hover animated fadeIn fast">
+  <thead>
+    <tr>
+      <th scope="col">C&oacute;digo</th>
+      <th scope="col">Descripci&oacute;n</th>
+      <th scope="col">Precio mayoreo</th>
+      <th scope="col">Precio menudeo</th>
+      <th scope="col">Cantidad (unidad)</th>
+      <th scope="col">Cantidad (piezas)</th>
+    </tr>
+  </thead>
+  <tbody class="animated fadeIn">
+    <tr *ngFor="let producto of productos" (click)="verProducto(producto.id_producto)">
+      <th scope="row"> {{ producto.id_producto }} </th>
+      <td> {{ producto.descripcion }} </td>
+      <td> {{ producto.precio_mayoreo }} </td>
+      <td> {{ producto.precio_menudeo }} </td>
+      <td> {{ producto.cantidad_unidades_inventario }} </td>
+      <td> {{ producto.cantidad_piezas_inventario }} </td>
+    </tr>
+  </tbody>
+</table>

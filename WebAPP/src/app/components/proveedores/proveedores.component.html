@@ -1,0 +1,56 @@
+<div class="row container animated fadeIn fast">
+  <div class="col-12 mb-3">
+    <a [routerLink]="['nuevo_proveedor']" > <svg height="24" width="24" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus-circle" class="svg-inline--fa fa-plus-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"></path></svg> </a>
+  </div>
+</div>
+
+<!-- *ngFor="let heroe of heroes; let i = index"-->
+<div class="card-columns animated fadeIn fast">
+  <div class="card animated fadeIn fast mx-3 animated fadeIn" *ngFor="let proveedor of proveedores">
+    <!--<img class="card-img-top img-fluid" [src]="heroe.img" [alt]="heroe.nombre">-->
+    <div class="card-bloc">
+      <h4 class="card-title"> {{ proveedor.nombre }} <small> {{ proveedor.apellido_paterno }} {{ proveedor.apellido_materno }} </small></h4>
+      <p class="card-text"> {{ proveedor.empresa }} </p>    
+      <button class="btn btn-outline-info btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Ver mas...
+      </button>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          <div class="row">
+            <div class="col d-md-12 col-md-6">
+                <p class="font-weight-bold">N&uacute;mero telefonico:</p>
+            </div>
+            <div class="col d-md-12 col-md-6">
+              <p> {{ proveedor.numero_telefonico }} </p>
+            </div>            
+          </div>
+          <div class="row">
+            <div class="col d-md-12 col-md-6">
+              <p class="font-weight-bold">Correo electronico:</p>
+            </div>
+            <div class="col d-md-12 col-md-6">
+              <p> {{ proveedor.correo_electronico }} </p>
+            </div>
+          </div>
+          <div class="row my-2">
+            <div class="col d-md-12 col-md-6">
+              <button class="btn-outline-success btn-block">Solicitar cotizaci&oacute;n</button>
+            </div>
+            <div class="col d-md-12 col-md-6">
+              <button class="btn-outline-success btn-block">Solicitar pedido</button>
+            </div>
+          </div>
+          <div class="row my-2">
+            <div class="col d-md-12 col-md-6">
+              <button class="btn-outline-warning btn-block">Editar</button>
+            </div>
+            <div class="col d-md-12 col-md-6">
+              <button class="btn-outline-danger btn-block">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
