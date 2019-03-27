@@ -25,6 +25,8 @@ import { InfoComponent } from './components/info/info.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { from } from 'rxjs';
 import { EmpleadosComponent } from './components/empleados/empleados.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+
 
 
 @NgModule({
@@ -41,7 +43,8 @@ import { EmpleadosComponent } from './components/empleados/empleados.component';
     BuscarProductoComponent,
     InfoComponent,
     AdminComponent,
-    EmpleadosComponent
+    EmpleadosComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
