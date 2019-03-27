@@ -1,14 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" [routerLink]="['punto_de_venta']">MIN</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a style="color:#DFEAE8" class="navbar-brand" [routerLink]="['punto_de_venta']">MIN</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            
+
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" [routerLink]="['punto_de_venta']" (click)="establecer('Ventas')">Ventas</a>
@@ -18,32 +18,32 @@
         </li>
         <!--Ventas-->
         <li class="nav-item" routerLinkActive="active" *ngIf="seccion == 'Ventas' || seccion == undefined">
-            <a class="nav-link" [routerLink]="['/punto_de_venta']">Ventas</a>
+            <a style="color:#DFEAE8" class="nav-link" [routerLink]="['/punto_de_venta']"><h6>Ventas</h6></a>
         </li>
         <li class="nav-item" routerLinkActive="active" *ngIf="seccion == 'Ventas' || seccion == undefined">
-            <a class="nav-link" [routerLink]="['/productos']">Productos</a>
+            <a style="color:#DFEAE8" class="nav-link" [routerLink]="['/productos']"><h6>Productos</h6></a>
         </li>
         <!--Proveedores-->
         <li class="nav-item" routerLinkActive="active" *ngIf="seccion == 'Proveedores'">
-          <a class="nav-link" [routerLink]="['/proveedores']">Proveedores</a>
+          <a style="color:#DFEAE8" class="nav-link" [routerLink]="['/proveedores']"><h6>Proveedores</h6></a>
         </li>
         <li class="nav-item" routerLinkActive="active" *ngIf="seccion == 'Proveedores'">
-          <a class="nav-link" [routerLink]="['/generar_cotizacion']">Cotizaciones</a>
+          <a style="color:#DFEAE8" class="nav-link" [routerLink]="['/generar_cotizacion']"><h6>Cotizaciones</h6></a>
         </li>
         <li class="nav-item" routerLinkActive="active" *ngIf="seccion == 'Proveedores'">
-          <a class="nav-link" [routerLink]="['pedidos']">Pedidos</a>
+          <a style="color:#DFEAE8" class="nav-link" [routerLink]="['pedidos']"><h6>Pedidos</h6></a>
         </li>
         <!--Administración-->
         <li class="nav-item" routerLinkActive="active" *ngIf="seccion == 'Administracion'">
-          <a class="nav-link" [routerLink]="['Administracion', 'info']">Informaci&oacute;n</a>
+          <a style="color:#DFEAE8" class="nav-link" [routerLink]="['Administracion', 'info']"><h6>Informaci&oacute;n</h6></a>
         </li>
         <li class="nav-item" routerLinkActive="active" *ngIf="seccion == 'Administracion'">
-          <a class="nav-link" [routerLink]="['Administracion', 'empleados']">Empleados</a>
+          <a style="color:#DFEAE8" class="nav-link" [routerLink]="['Administracion', 'empleados']"><h6>Informaci&oacute;n</h6></a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar productos" aria-label="Search" (keyup.enter)="buscar(productoBuscado.value)" #productoBuscado>
-        <button class="btn btn-outline-success my-2 my-sm-0" (click)="buscar(productoBuscado.value)" type="submit">Search</button>
+        <button class="btn btn-info my-2 my-sm-0" (click)="buscar(productoBuscado.value)" type="submit">Search</button>
       </form>
     </div>
   </nav>
