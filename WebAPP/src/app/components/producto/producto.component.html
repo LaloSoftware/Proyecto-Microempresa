@@ -11,14 +11,14 @@
         <td> {{ producto.id_producto }} </td>
       </tr>
       <tr *ngIf="estado == 'edicion'">
-        <td colspan="2"><input type="text" placeholder="C&oacute;digo Nuevo"></td>
+        <td colspan="2"><input class="form-control" type="text" value="{{producto.id_producto}}"></td>
       </tr>
       <tr>
         <th scope="row" class="alert-info">Descripción: </th>
         <td> {{ producto.descripcion }} </td>
       </tr>
       <tr *ngIf="estado == 'edicion'">
-          <td colspan="2"><input type="text" placeholder="Descripci&oacute;n Nueva"></td>
+          <td colspan="2"><input class="form-control" type="text" value="{{producto.descripcion}}"></td>
         </tr>
     </tbody>
   </table>
@@ -37,8 +37,8 @@
         <td> {{ producto.precio_pieza_sin_impuestos }} </td>
       </tr>
       <tr *ngIf="estado == 'edicion'">
-        <td><input type="text" placeholder="Precio (Unidad) Nuevo"></td>
-        <td><input type="text" placeholder="Precio (Pieza) Nuevo"></td>
+        <td><input class="form-control" type="text" value="{{producto.precio_unitario_sin_impuestos}}"></td>
+        <td><input class="form-control" type="text" value="{{producto.precio_pieza_sin_impuestos}}"></td>
       </tr>
     </tbody>
   </table>
@@ -57,8 +57,8 @@
         <td> {{ producto.ieps }} </td>
       </tr>
       <tr *ngIf="estado == 'edicion'">
-        <td><input type="text" placeholder="IVA Nuevo"></td>
-        <td><input type="text" placeholder="IEPS Nuevo"></td>
+        <td><input class="form-control" type="text" value="{{producto.iva}}"></td>
+        <td><input class="form-control" type="text" value="{{producto.ieps}}"></td>
       </tr>
     </tbody>
   </table>
@@ -77,8 +77,8 @@
         <td> {{ producto.precio_pieza_con_impuestos }} </td>
       </tr>
       <tr *ngIf="estado == 'edicion'">
-        <td><input type="text" placeholder="Precio (unidad) Nuevo"></td>
-        <td><input type="text" placeholder="Precio (pieza) Nuevo"></td>
+        <td><input class="form-control" type="text" value="{{producto.precio_unitario_con_impuestos}}"></td>
+        <td><input class="form-control" type="text" value="{{producto.precio_pieza_con_impuestos}}"></td>
       </tr>
     </tbody>
   </table>
@@ -97,8 +97,8 @@
         <td> {{ producto.precio_menudeo }} </td>
       </tr>
       <tr *ngIf="estado == 'edicion'">
-        <td><input type="text" placeholder="Precio al Mayoreo Nuevo"></td>
-        <td><input type="text" placeholder="Precio al Menudeo Nuevo"></td>
+        <td><input class="form-control" type="text" value="{{producto.precio_mayoreo}}"></td>
+        <td><input class="form-control" type="text" value="{{producto.precio_menudeo}}"></td>
       </tr>
     </tbody>
   </table>

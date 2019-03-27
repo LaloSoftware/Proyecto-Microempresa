@@ -8,14 +8,26 @@ import { InfoService } from "../../services/info.service";
 })
 export class InfoComponent implements OnInit {
   public informacion: any;
+  public estado: string;
   constructor(
     private _infoService : InfoService
-  ) { }
+  ) {
+    this.estado = "vista";
+  }
 
   ngOnInit() {
     this.informacion = this._infoService.obtenerDatos();
-    console.log(this.informacion);
     
+  }
+
+  public cambiarEstado(): void{
+    if(this.estado == "vista"){
+      this.estado = "edicion";
+    }
+    else{
+      this.estado = "vista";
+    }
+    console.log(this.estado);
   }
 
 }

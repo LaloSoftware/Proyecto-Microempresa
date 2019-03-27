@@ -6,25 +6,27 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col col-6 my-3">
-      <label>Correo:</label>
+  <div class="container">
+    <div class="row">
+      <div class="col col-6 my-3">
+        <label>Correo:</label>
+      </div>
+      <div class="col col-6 my-3">
+          <input class="btn-block" type="text" placeholder="Correo" #bossMail>
+      </div>
     </div>
-    <div class="col col-6 my-3">
-        <input class="btn-block" type="text" placeholder="Correo" #bossMail>
+    <div class="row">
+      <div class="col col-6 my-3">
+        <label>Contrase&ntilde;a</label>
+      </div>
+      <div class="col col-6 my-3">
+        <input class="btn-block" type="password" placeholder="Contrase&ntilde;a" #bossPass>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col col-6 my-3">
-      <label>Contrase&ntilde;a</label>
-    </div>
-    <div class="col col-6 my-3">
-      <input class="btn-block" type="password" placeholder="Contrase&ntilde;a" #bossPass>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col col-12 my-3">
-      <button class="btn btn-success" (click)="verificar(bossMail.value, bossPass.value)">Acceder</button>
+    <div class="row">
+      <div class="col col-12 my-3">
+        <button class="btn btn-success" (click)="verificar(bossMail.value, bossPass.value)">Acceder</button>
+      </div>
     </div>
   </div>
 </div>

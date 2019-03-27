@@ -6,41 +6,108 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col d-md-12 col-md-6">
+        <div class="col d-md-12 col-md-4">
             Propietario
         </div>
-        <div class="col d-md-12 col-md-6">
+        <div class="col d-md-12 col-md-8">
             {{ informacion.nombre_patron }}
         </div>
     </div>
     <hr>
     <div class="row">
-        <div class="col d-md-12 col-md-6">
+        <div class="col d-md-12 col-md-4">
             Direcci&oacute;n
         </div>
-        <div class="col d-md-12 col-md-6">
+        <div class="col d-md-12 col-md-8" *ngIf="estado == 'vista'">
             {{ informacion.direccion }}, {{ informacion.codigo_postal }}
         </div>
+        <div class="col d-md-12 col-md-4" *ngIf="estado == 'edicion'">
+            <input class="form-control mx-1" type="text" value="{{informacion.direccion}}">
+        </div>
+        <div class="col d-md-12 col-md-4" *ngIf="estado == 'edicion'">
+            <input class="form-control mx-1" type="text" value="{{informacion.codigo_postal}}">
+        </div>
     </div>
     <hr>
     <div class="row">
-        <div class="col d-md-12 col-md-3">
+        <div class="col d-md-12 col-md-2">
             RFC:
         </div>
-        <div class="col d-md-12 col-md-3">
+        <div class="col d-md-12 col-md-4" *ngIf="estado == 'vista'">
             {{ informacion.rfc | uppercase}}
         </div>
-        <div class="col d-md-12 col-md-3">
+        <div class="col d-md-12 col-md-4" *ngIf="estado == 'edicion'">
+            <input class="form-control" type="text" value="{{informacion.rfc | uppercase}}">
+        </div>
+        <div class="col d-md-12 col-md-2">
             Tipo de negocio:
         </div>
-        <div class="col d-md-12 col-md-3">
+        <div class="col d-md-12 col-md-4" *ngIf="estado == 'vista'">
             {{ informacion.tipo_negocio }}
+        </div>
+        <div class="col d-md-12 col-md-4" *ngIf="estado == 'edicion'">
+            <input class="form-control" type="text" value="{{informacion.tipo_negocio}}">
         </div>
     </div>
     <hr>
     <div class="row">
-        <div class="col d-md-3">
-            <button class="btn btn-warning">Editar</button>
+        <div class="col d-md-3" *ngIf="estado == 'vista'">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCentered">
+                Editar
+            </button>
+            <!-- Modal -->
+            <div class="modal" id="exampleModalCentered" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenteredLabel">Validaci&oacute;n de acceso</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container container-fluid">
+                                <div class="row">
+                                    <div class="col col-12 my-3">
+                                        <div class="alert alert-info" role="alert">
+                                            Por favor ingrese nuevamente su usuario y contrase&ntilde;a de administrador.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col col-6 my-3">
+                                            <label>Correo:</label>
+                                        </div>
+                                        <div class="col col-6 my-3">
+                                            <input class="form-control" type="text" placeholder="Correo" #bossMail>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-6 my-3">
+                                            <label>Contrase&ntilde;a</label>
+                                        </div>
+                                        <div class="col col-6 my-3">
+                                            <input class="form-control" type="password" placeholder="Contrase&ntilde;a" #bossPass>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-success" (click)="cambiarEstado()" data-dismiss="modal">Acceder</button>
+                        </div>
+                    </div>
+                </div>
+            </div>      
+        </div>
+        <div class="col d-md-3" *ngIf="estado == 'edicion'">
+            <button class="btn btn-warning" (click)="cambiarEstado()">Cancelar</button>
+        </div>
+        <div class="col d-md-3" *ngIf="estado == 'edicion'">
+            <button class="btn btn-success" (click)="cambiarEstado()">Guardar cambios</button>
         </div>
     </div>
 </div>
