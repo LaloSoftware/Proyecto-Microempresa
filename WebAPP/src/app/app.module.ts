@@ -7,6 +7,8 @@ import { APP_ROUTING } from "./app.routes";
 //Servicios
 import { ProveedoresService } from "./services/proveedores.service";
 import { ProductosService } from "./services/productos.service";
+import { InfoService } from "./services/info.service";
+import { EmpleadosService } from "./services/empleados.service";
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -19,6 +21,10 @@ import { GenerarCotizacionComponent } from './components/generar-cotizacion/gene
 import { GenerarPedidoComponent } from './components/generar-pedido/generar-pedido.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { BuscarProductoComponent } from './components/buscar-producto/buscar-producto.component';
+import { InfoComponent } from './components/info/info.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { from } from 'rxjs';
+import { EmpleadosComponent } from './components/empleados/empleados.component';
 
 
 @NgModule({
@@ -32,13 +38,16 @@ import { BuscarProductoComponent } from './components/buscar-producto/buscar-pro
     GenerarCotizacionComponent,
     GenerarPedidoComponent,
     ProductosComponent,
-    BuscarProductoComponent
+    BuscarProductoComponent,
+    InfoComponent,
+    AdminComponent,
+    EmpleadosComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [ ProveedoresService, ProductosService ],
+  providers: [ ProveedoresService, ProductosService, InfoService, EmpleadosService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

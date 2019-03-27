@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-12">
+            <h3> {{ informacion.nombre | uppercase}} </h3>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col d-md-12 col-md-6">
+            Propietario
+        </div>
+        <div class="col d-md-12 col-md-6">
+            {{ informacion.nombre_patron }}
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col d-md-12 col-md-6">
+            Direcci&oacute;n
+        </div>
+        <div class="col d-md-12 col-md-6">
+            {{ informacion.direccion }}, {{ informacion.codigo_postal }}
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col d-md-12 col-md-3">
+            RFC:
+        </div>
+        <div class="col d-md-12 col-md-3">
+            {{ informacion.rfc | uppercase}}
+        </div>
+        <div class="col d-md-12 col-md-3">
+            Tipo de negocio:
+        </div>
+        <div class="col d-md-12 col-md-3">
+            {{ informacion.tipo_negocio }}
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col d-md-3">
+            <button class="btn btn-warning">Editar</button>
+        </div>
+    </div>
+</div>

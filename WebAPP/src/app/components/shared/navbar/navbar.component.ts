@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -6,12 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   public seccion: string
-  constructor() { }
+  constructor(
+    private _router: Router
+  ) { }
 
   ngOnInit() {
   }
 
   public establecer(seccion: string){
     this.seccion = seccion;
+  }
+  buscar(cadena: string){
+    console.log(cadena);
+    this._router.navigate(["/productos", cadena]);
   }
 }
