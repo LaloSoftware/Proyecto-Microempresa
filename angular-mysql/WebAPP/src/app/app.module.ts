@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 //Rutas
 import { APP_ROUTING } from "./app.routes";
@@ -27,6 +28,7 @@ import { from } from 'rxjs';
 import { EmpleadosComponent } from './components/empleados/empleados.component';
 import { RegistrarProveedorComponent } from './components/registrar-proveedor/registrar-proveedor.component';
 import { RegistrarEmpleadoComponent } from './components/registrar-empleado/registrar-empleado.component';
+import { HttpClient } from 'selenium-webdriver/http';
 
 
 @NgModule({
@@ -49,7 +51,8 @@ import { RegistrarEmpleadoComponent } from './components/registrar-empleado/regi
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    HttpClientModule
   ],
   providers: [ ProveedoresService, ProductosService, InfoService, EmpleadosService ],
   bootstrap: [AppComponent]
