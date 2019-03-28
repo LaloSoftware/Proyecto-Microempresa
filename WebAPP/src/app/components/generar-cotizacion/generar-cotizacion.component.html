@@ -1,14 +1,10 @@
-<div>
-  Aqui apareceran los productos y despues de presionar un boton se guardarán los productos seleccionados y se mostrarán los proveedores a seleccionar y mandar la cotización
-</div>
-
-<div class="row" *ngIf="productos == undefined">
+<div class="row animated fadeIn fast" *ngIf="productos == undefined && pasos == 1">
   <div class="alert alert-warning" role="alert">
     <strong> Usted no cuenta con productos registrados </strong>  Por favor registre alguno.
   </div>
 </div>
 
-<div class="tabla" *ngIf="productos != undefined">
+<div class="tabla animated fadeIn fast" *ngIf="productos != undefined">
     <table class="table table-hover animated fadeIn fast">
       <thead>
         <tr>
@@ -27,9 +23,14 @@
             <td> {{ producto.cantidad_piezas_inventario }} </td>
             <td> <input type="checkbox" name="producto.descripcion" id="producto.id_producto"> </td>
           </tr>
-        </tbody>
+      </tbody>
     </table>
 </div>  
+<div class="row container" *ngIf="pasos == 1">
+  <div class="col col-2">
+    <button class="btn btn-info" (click)="Avanzar()">Continuar</button>
+  </div>
+</div>
 
 
 

@@ -1,6 +1,6 @@
 <div class="row animated fadeIn">
   <div class="d-md-12 col-md-6 px-1">
-    <input class="form-control btn-block" type="text" name="codigoBarras" id="codigoBarras" placeholder="C&oacute;digo de barras" #artVender>
+    <input class="form-control btn-block" type="text" name="codigoBarras" id="codigoBarras" (keyup.enter)="AgregarProducto(artVender.value, cantidad.value)" placeholder="C&oacute;digo de barras" #artVender>
   </div>
   <div class="d-md-12 col-md-3 px-1">
     <select class="form-control btn-block" id="sel1" #cantidad>
@@ -96,8 +96,17 @@
         {{ producto.pVenta["precio_menudeo"] }}
       </div>
       <div class="col col-md-3">
-        {{ producto.pVenta["precio_menudeo"] * cantidad }}
+        {{ producto.subtotal }}
       </div>
+    </div>
+  </div>
+  <div class="row container">
+    <hr>
+    <div class="col col-8">
+      Total
+    </div>
+    <div class="col col-4">
+      {{ total }}
     </div>
   </div>
 </div>

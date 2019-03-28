@@ -130,6 +130,54 @@ export class ProductosService{
             cantidad_minima_inventario: 20,
             estado: "activo",
             precio_pieza_con_impuestos: 9
+        },
+        {
+            id_producto: 75002275,
+            descripcion: "chocoroll",
+            precio_unitario_sin_impuestos: 15,
+            precio_pieza_sin_impuestos: 15,
+            iva: 16,
+            ieps: 0,
+            precio_unitario_con_impuestos: 16,
+            precio_mayoreo: 16.8,
+            precio_menudeo: 17,
+            cantidad_unidades_inventario: 16,
+            cantidad_piezas_inventario: 16,
+            cantidad_minima_inventario: 5,
+            estado: "activo",
+            precio_pieza_con_impuestos: 16.7
+        },
+        {
+            id_producto: 7501033954085,
+            descripcion: "Ensure",
+            precio_unitario_sin_impuestos: 15,
+            precio_pieza_sin_impuestos: 15,
+            iva: 16,
+            ieps: 0,
+            precio_unitario_con_impuestos: 16,
+            precio_mayoreo: 16.8,
+            precio_menudeo: 17,
+            cantidad_unidades_inventario: 16,
+            cantidad_piezas_inventario: 16,
+            cantidad_minima_inventario: 5,
+            estado: "activo",
+            precio_pieza_con_impuestos: 16.7
+        },
+        {
+            id_producto: 7501045403144,
+            descripcion: "Atún",
+            precio_unitario_sin_impuestos: 15,
+            precio_pieza_sin_impuestos: 15,
+            iva: 16,
+            ieps: 0,
+            precio_unitario_con_impuestos: 16,
+            precio_mayoreo: 16.8,
+            precio_menudeo: 17,
+            cantidad_unidades_inventario: 16,
+            cantidad_piezas_inventario: 16,
+            cantidad_minima_inventario: 5,
+            estado: "activo",
+            precio_pieza_con_impuestos: 16.7
         }
     ];
     
@@ -159,6 +207,18 @@ export class ProductosService{
             }
         }
         return productosBuscados;
+    }
+
+    public putProducto(): void{
+
+    }
+
+    public postProducto(): void{
+
+    }
+
+    public deleteProducto(): void{
+
     }
 }
 

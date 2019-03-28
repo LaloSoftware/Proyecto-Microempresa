@@ -8,6 +8,7 @@ import { ProductosService } from "../../services/productos.service";
 })
 export class PuntoDeVentaComponent implements OnInit {
   public ventaActual: Venta[] = [];
+  public total:number;
   constructor(
               private _productosService: ProductosService
   ) {}
@@ -18,18 +19,34 @@ export class PuntoDeVentaComponent implements OnInit {
 
   public AgregarProducto(id_p, cantidadVenta){
     if(this._productosService.getProducto(id_p) != null){
-      this.ventaActual.push({pVenta: this._productosService.getProducto(id_p), cantidad: cantidadVenta});
+      let artVent = this._productosService.getProducto(id_p);
+      console.log(artVent["descripcion"]);
+      let encontrado: boolean = false;
+      for(let i = 0; i < this.ventaActual.length; i++){
+        if(this.ventaActual[i].pVenta["descripcion"] == artVent["descripcion"]){
+          this.ventaActual[i].cantidad = (this.ventaActual[i].cantidad * 1) + (cantidadVenta * 1);
+          this.ventaActual[i].subtotal = this.ventaActual[i].cantidad * this.ventaActual[i].pVenta["precio_menudeo"];
+          encontrado = true;
+        }
+      }
+      if(!encontrado){
+        this.ventaActual.push({pVenta: artVent, cantidad: cantidadVenta, subtotal: artVent["precio_menudeo"] * cantidadVenta});
+      }
+      this.total = 0;
+      for(let i = 0; i < this.ventaActual.length; i++){
+        this.total += this.ventaActual[i].subtotal;
+        console.log("Ultima: ",this.ventaActual[i].subtotal);
+      }
+      console.log("total: ",this.total);
+      
+
+      console.log("Venta ",this.ventaActual);
     }
-    for(let i =0; i < this.ventaActual.length; i++){
-      console.log(this.ventaActual[i].pVenta["descripcion"]);
-    }
-    
   }
-
-
 }
 
 interface Venta{
   pVenta: object,
-  cantidad: number
+  cantidad: number,
+  subtotal: number
 }
