@@ -4,27 +4,27 @@
   </div>
 </div>
 
-<div class="tabla animated fadeIn fast" *ngIf="productos != undefined">
-    <table class="table table-hover animated fadeIn fast">
-      <thead>
-        <tr>
-          <th scope="col">C&oacute;digo</th>
-          <th scope="col">Descripci&oacute;n</th>
-          <th scope="col">Cantidad (unidad)</th>
-          <th scope="col">Cantidad (piezas)</th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody class="animated fadeIn">
-          <tr *ngFor="let producto of productos">
-            <th scope="row"> {{ producto.id_producto }} </th>
-            <td> {{ producto.descripcion }} </td>
-            <td> {{ producto.cantidad_unidades_inventario }} </td>
-            <td> {{ producto.cantidad_piezas_inventario }} </td>
-            <td> <input type="checkbox" name="producto.descripcion" id="producto.id_producto"> </td>
-          </tr>
-      </tbody>
-    </table>
+<div class="tabla animated fadeIn fast" *ngIf="pasos == 1">
+  <table class="table table-hover animated fadeIn fast">
+    <thead>
+      <tr>
+        <th scope="col">C&oacute;digo</th>
+        <th scope="col">Descripci&oacute;n</th>
+        <th scope="col">Cantidad (unidad)</th>
+        <th scope="col">Cantidad (piezas)</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="animated fadeIn">
+      <tr *ngFor="let producto of productos">
+        <th scope="row"> {{ producto.id_producto }} </th>
+        <td> {{ producto.descripcion }} </td>
+        <td> {{ producto.cantidad_unidades_inventario }} </td>
+        <td> {{ producto.cantidad_piezas_inventario }} </td>
+        <td> <input type="checkbox" name="producto.descripcion" id="producto.id_producto"> </td>
+      </tr>
+    </tbody>
+  </table>
 </div>  
 <div class="row container" *ngIf="pasos == 1">
   <div class="col col-2">
@@ -33,4 +33,40 @@
 </div>
 
 
+<div class="tabla animated fadeIn fast" *ngIf="pasos == 2">
+  <table class="table table-hover animated fadeIn fast">
+    <thead>
+      <tr>
+        <th scope="col">C&oacute;digo</th>
+        <th scope="col">Descripci&oacute;n</th>
+        <th scope="col">Cantidad (unidad)</th>
+        <th scope="col">Cantidad (piezas)</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="animated fadeIn">
+      <tr *ngFor="let proveedor of proveedores">
+        <th scope="row"> {{ proveedor.nombre }} </th>
+        <td> {{ proveedor.apellido_paterno }} {{ proveedor.apellido_materno }} </td>
+        <td> {{ proveedor.empresa }} </td>
+        <td> {{ proveedor.numero_telefonico }} </td>
+        <td> {{ proveedor.correo_electronico }} </td>
+        <td> <input type="checkbox" name="producto.descripcion" id="proveedor.id_proveedor"> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
+<div class="row container" *ngIf="pasos == 2">
+  <div class="col col-2">
+    <button class="btn btn-info tabla animated fadeIn fast" (click)="Avanzar()">Enviar</button>
+  </div>
+</div>
+
+<div class="alert alert-info animated fadeIn" role="alert" *ngIf="pasos == 3">
+    <strong>Heads up!</strong> solicitud enviada.
+</div>
+
+<div class="animated fadeIn" *ngIf="pasos == 3">
+  <button class="btn btn-info" (click)="RegresarAProveedores()">Regresar</button>
+</div>

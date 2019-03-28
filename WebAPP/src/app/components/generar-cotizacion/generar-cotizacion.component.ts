@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from "../../services/productos.service";
 import { ProveedoresService } from "../../services/proveedores.service";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -16,7 +17,8 @@ export class GenerarCotizacionComponent implements OnInit {
   private pasos: number;
   constructor(
     private _productosService: ProductosService,
-    private _proveedoresService: ProveedoresService
+    private _proveedoresService: ProveedoresService,
+    private router: Router
   ) {
     this.productos = this._productosService.getProductos();
     this.proveedores = this._proveedoresService.getProveedores();
@@ -32,5 +34,9 @@ export class GenerarCotizacionComponent implements OnInit {
       this.pasos = 1;
     }
     console.log(this.pasos);
+  }
+  
+  public RegresarAProveedores(): void{
+    this.router.navigate(["/proveedores"]);
   }
 }

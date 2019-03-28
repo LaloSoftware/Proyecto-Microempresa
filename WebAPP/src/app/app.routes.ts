@@ -10,6 +10,10 @@ import { GenerarCotizacionComponent } from "./components/generar-cotizacion/gene
 import { InfoComponent } from "./components/info/info.component";
 import { AdminComponent } from "./components/admin/admin.component";
 import { EmpleadosComponent } from "./components/empleados/empleados.component";
+import { RegistrarProveedorComponent } from "./components/registrar-proveedor/registrar-proveedor.component";
+import { GenerarPedidoComponent } from "./components/generar-pedido/generar-pedido.component";
+import { RegistrarEmpleadoComponent } from "./components/registrar-empleado/registrar-empleado.component";
+
 
 const APP_ROUTES: Routes = [
     { path:"punto_de_venta",  component: PuntoDeVentaComponent},
@@ -19,9 +23,12 @@ const APP_ROUTES: Routes = [
     { path:"productos/nuevo", component: RegistrarProductosComponent },
     { path:"productos/:cadena", component: BuscarProductoComponent },
     { path:"generar_cotizacion", component: GenerarCotizacionComponent },
-    { path: "Administracion", component: AdminComponent },
-    { path: "Administracion/info", component: InfoComponent },
-    { path: "Administracion/empleados", component: EmpleadosComponent },
+    { path:"Administracion", component: AdminComponent },
+    { path:"Administracion/info", component: InfoComponent },
+    { path:"Administracion/empleados", component: EmpleadosComponent },
+    { path:"proveedores/nuevo", component: RegistrarProveedorComponent },
+    { path:"generar_pedido", component: GenerarPedidoComponent },
+    { path:"Administracion/empleados/nuevo", component: RegistrarEmpleadoComponent },
     { path: "**", pathMatch: "full", redirectTo: "punto_de_venta" }
 ];
 

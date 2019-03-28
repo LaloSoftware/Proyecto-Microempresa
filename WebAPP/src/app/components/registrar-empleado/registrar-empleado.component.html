@@ -1,0 +1,36 @@
+<div class="tabla my-1">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="table-success" style="text-align: center" colspan="2" scope="col">Empleado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" class="alert-info">Nombre: </th>
+        <td><input class="btn-block" type="text" placeholder="Nombre"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="alert-info">Apellido paterno: </th>
+        <td><input class="btn-block" type="text" placeholder="Apellido paterno"></td>
+      </tr>
+      <tr>
+        <th scope="row" class="alert-info">Apellido materno: </th>
+        <td><input class="btn-block" type="text" placeholder="Apellido materno"></td>
+      </tr>   
+      <tr>
+        <td class="alert-info">Puesto: </td>
+        <td><input class="btn-block" type="text" placeholder="Puesto"></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="row">
+    <div class="col d-md-12 col-md-2">
+      <button class="btn btn-warning btn-block" (click)="Regresar()">Cancelar</button>
+    </div>
+    <div class="col d-md-12 col-md-2">
+      <button class="btn btn-success btn-block">Guardar</button>
+    </div>
+  </div>
+</div>
