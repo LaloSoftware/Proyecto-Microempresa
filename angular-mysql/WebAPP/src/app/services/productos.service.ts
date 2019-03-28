@@ -1,7 +1,15 @@
 import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+
+import { Producto } from '../models/Producto';
+
 
 @Injectable()
 export class ProductosService{
+
+    API_URI = 'localhost:3000/api';
+    
+    /*
     private _productos:Producto[] = [
         {
             id_producto: 9876543210,
@@ -180,14 +188,31 @@ export class ProductosService{
             precio_pieza_con_impuestos: 16.7
         }
     ];
+    */
     
-    constructor(){
-        
+    constructor(private http: HttpClient) { }
+
+    getProductos() {
+        return this.http.get(`${this.API_URI}/productos`);
     }
 
+    getProducto(id: string) {
+        return this.http.get(`${this.API_URI}/productos/${id}`);
+    }
+
+    deleteProducto(id: string) {
+        return this.http.delete(`${this.API_URI}/productos/${id}`);
+    }
+
+    updateProducto(id: string, updatedProducto: Producto): Observable<any> {
+        return this.http.put(`${this.API_URI}/productos/${id}`, updatedProducto);
+    }
+
+    /*
     public getProductos(): Producto[]{
         return this._productos;
     }
+
     public getProducto(id_p): Producto{
         for (let index = 0; index < this._productos.length; index++) {
             if(this._productos[index].id_producto == id_p){
@@ -196,11 +221,20 @@ export class ProductosService{
         }
         return null;
     }
+*/
     public getBuscados(cadena:string): Producto[]{
         let productosBuscados: Producto[] = [];
         cadena = cadena.toLowerCase();
         let nombreProducto: string; 
-        for( let producto of this._productos){
+        let productos: Producto[] = this.getProductos().subscribe(
+            res => {
+                productos = res;
+            },
+            err => {
+                console.log(err);
+            }
+        );
+        for( let producto of productos){
             nombreProducto = producto.descripcion.toLowerCase();
             if(nombreProducto.indexOf(cadena) >= 0){
                 productosBuscados.push(producto);
@@ -208,33 +242,5 @@ export class ProductosService{
         }
         return productosBuscados;
     }
-
-    public putProducto(): void{
-
-    }
-
-    public postProducto(): void{
-
-    }
-
-    public deleteProducto(): void{
-
-    }
-}
-
-interface Producto{
-    id_producto: number,
-    descripcion: string,
-    precio_unitario_sin_impuestos: number,
-    precio_pieza_sin_impuestos: number,
-    iva: number,
-    ieps: number,
-    precio_unitario_con_impuestos: number,
-    precio_pieza_con_impuestos: number,
-    precio_mayoreo: number,
-    precio_menudeo: number,
-    cantidad_unidades_inventario: number,
-    cantidad_piezas_inventario: number,
-    cantidad_minima_inventario: number,
-    estado: string
+    
 }
